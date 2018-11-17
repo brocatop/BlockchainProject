@@ -12,6 +12,11 @@ namespace BlockchainDemonstration.Classes
         public string EmployeeName { get; set; }
         public string Department { get; set; }
 
+        public Employee()
+        {
+
+        }
+
         public Employee (int id, string name, string department)
         {
             EmployeeID = id;
@@ -20,11 +25,20 @@ namespace BlockchainDemonstration.Classes
         }
 
         //create a method to generate these, but somewhere else
-        public Employee Al = new Employee(1, "Al", "Accounting");
-        public Employee Allen = new Employee(2, "Allen", "HR");
-        public Employee TaylaAnn = new Employee(3, "Tayla-Ann", "Customer Service");
-        public Employee Seth = new Employee(4, "Seth Rogen", "Customer Service");
-        public Employee George = new Employee(5, "George of the Jungle", "Physical Plant");
-        public Employee Sally = new Employee(6, "Sally", "Management");
+
+
+
+        public List<Employee> GetEmployees()
+        {
+            Employee Al = new Employee(1, "Al", "Accounting");
+            Employee Allen = new Employee(2, "Allen", "HR");
+            Employee TaylaAnn = new Employee(3, "Tayla-Ann", "Customer Service");
+            Employee Seth = new Employee(4, "Seth Rogen", "Customer Service");
+            Employee George = new Employee(5, "George of the Jungle", "Physical Plant");
+            Employee Sally = new Employee(6, "Sally", "Management");
+            List<Employee> employees = new List<Employee> { Al, Allen, TaylaAnn, Seth, George, Sally};
+
+            return employees;
+        }
     }
 }

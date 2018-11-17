@@ -20,24 +20,5 @@ namespace BlockchainDemonstration
             Application.Run(new Form1());
 
         }
-
-        public Blockchain GenerateChain()
-        {
-            Blockchain newChain = new Blockchain();
-            newChain.InitializeChain();
-            newChain.CreateBeginningBlock();
-            newChain.AddBeginningBlock();
-
-            Employee emp;
-            Random rnd = new Random();
-            for (int i = 0; i < 20; i++)
-            {
-                
-            }
-
-
-
-            return newChain;
-        }
     }
 }

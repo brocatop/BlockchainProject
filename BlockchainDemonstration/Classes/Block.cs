@@ -21,10 +21,10 @@ namespace BlockchainDemonstration.Classes
             TimeStamp = ts;
             PrevHash = ph;
             Data = d;
-            // Hash = MakeHash();
+            Hash = MakeHash();
         }
 
-        public string CalculateHash()
+        public string MakeHash()
         {
             SHA256 s = SHA256.Create();
 
