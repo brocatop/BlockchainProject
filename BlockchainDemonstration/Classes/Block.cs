@@ -24,14 +24,18 @@ namespace BlockchainDemonstration.Classes
             Hash = MakeHash();
         }
 
+        public override string ToString()
+        {
+            return (TimeStamp + " " + PrevHash + " " + Hash + " " + Data.ToString());
+        }
         public string MakeHash()
         {
             SHA256 s = SHA256.Create();
 
-            byte[] input = Encoding.ASCII.GetBytes($"{TimeStamp}-{PrevHash ?? ""}-{Data}");
+            byte[] input = Encoding.UTF8.GetBytes($"{TimeStamp}-{PrevHash ?? ""}-{Data}");
             byte[] output = s.ComputeHash(input);
 
-            return output.ToString();
+            return System.Text.Encoding.UTF8.GetString(output);
         }
     }
 }

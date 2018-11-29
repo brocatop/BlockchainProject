@@ -38,34 +38,5 @@ namespace BlockchainDemonstration.Classes
             block.Hash = block.MakeHash();
             Chain.Add(block);
         }
-
-        public Blockchain GenerateChain()
-        {
-            Blockchain newChain = new Blockchain();
-            newChain.InitializeChain();
-            newChain.CreateBeginningBlock();
-            newChain.AddBeginningBlock();
-
-            Employee emp = new Employee();
-            List<Employee> employees = emp.GetEmployees();
-            Random rnd = new Random();
-
-            foreach (Employee e in employees)
-            {
-                int index = rnd.Next(employees.Count);
-
-                newChain.AddBlock(new Block(DateTime.Now, "prevhash", employees[index].ToString()));
-            }
-
-            return newChain;
-        }
-
-        public Blockchain ReadBlockChainContents()
-        {
-            Blockchain bc = new Blockchain();
-
-
-            return bc;
-        }
     }
 }

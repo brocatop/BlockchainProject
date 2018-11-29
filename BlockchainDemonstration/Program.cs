@@ -15,10 +15,15 @@ namespace BlockchainDemonstration
         [STAThread]
         static void Main()
         {
+
+            Helper help = new Helper();
+            Blockchain chain = help.GenerateChain();
+            help.ReadBlockChainContents(chain);
+            /*
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-
+            */
         }
     }
 }

@@ -24,8 +24,10 @@ namespace BlockchainDemonstration.Classes
             Department = department;
         }
 
-        //create a method to generate these, but somewhere else
-
+        public override string ToString()
+        {
+            return (EmployeeID + " " + EmployeeName + " " + Department);
+        }
 
 
         public List<Employee> GetEmployees()
