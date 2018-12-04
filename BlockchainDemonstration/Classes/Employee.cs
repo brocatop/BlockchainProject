@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BlockchainDemonstration.Classes
 {
@@ -30,7 +26,7 @@ namespace BlockchainDemonstration.Classes
         }
 
 
-        public List<Employee> GetEmployees()
+        public List<Employee> CreateListofEmployees()
         {
             Employee Al = new Employee(1, "Al", "Accounting");
             Employee Allen = new Employee(2, "Allen", "HR");

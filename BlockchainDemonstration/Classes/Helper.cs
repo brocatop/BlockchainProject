@@ -8,6 +8,7 @@ namespace BlockchainDemonstration.Classes
 {
     class Helper
     {
+        List<Employee> employees = new List<Employee>();
         public Blockchain GenerateChain()
         {
             Blockchain newChain = new Blockchain();
@@ -16,16 +17,21 @@ namespace BlockchainDemonstration.Classes
             newChain.AddBeginningBlock();
 
             Employee emp = new Employee();
-            List<Employee> employees = emp.GetEmployees();
+            employees = emp.CreateListofEmployees();
             Random rnd = new Random();
-
+            int i = 1;
             foreach (Employee e in employees)
             {
                 int index = rnd.Next(employees.Count);
-
-                newChain.AddBlock(new Block(DateTime.Now, "prevhash", employees[index].ToString()));
+                newChain.AddBlock(new Block(DateTime.Now, "prevhash", employees[index], i));
+                i++;
             }
             return newChain;
+        }
+
+        public Employee GetEmployeeAt(int i)
+        {
+            return employees.ElementAt<Employee>(i);
         }
 
         public void ReadBlockChainContents(Blockchain chainRead)

@@ -17,7 +17,8 @@ namespace BlockchainDemonstration.Classes
 
         public Block CreateBeginningBlock()
         {
-            return new Block(DateTime.Now, null, "{}");
+            Employee blank = new Employee();
+            return new Block(DateTime.Now, null, blank, 0);
         }
 
         public void AddBeginningBlock()
@@ -38,5 +39,23 @@ namespace BlockchainDemonstration.Classes
             block.Hash = block.MakeHash();
             Chain.Add(block);
         }
+
+        public Block GetBlockAt(int index)
+        {
+            return Chain.ElementAt<Block>(index);
+        }
+
+        /*
+        public bool HasHashChanged(newHash, oldHash)
+        {
+            if(newHash == oldHash)
+            {
+                return true;
+            }
+            else if(newHash != oldHash)
+            {
+                return false;
+            }
+        } */
     }
 }

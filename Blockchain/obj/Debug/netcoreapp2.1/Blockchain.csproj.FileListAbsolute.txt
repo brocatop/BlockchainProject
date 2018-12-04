@@ -29,3 +29,4 @@ C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\Blockch
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\Blockchain\obj\Debug\netcoreapp2.1\Blockchain.dll
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\Blockchain\obj\Debug\netcoreapp2.1\Blockchain.pdb
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\Blockchain\obj\Debug\netcoreapp2.1\Blockchain.csproj.CopyComplete
+C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\Blockchain\obj\Debug\netcoreapp2.1\Blockchain.csprojAssemblyReference.cache

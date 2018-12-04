@@ -13,11 +13,11 @@ namespace BlockchainDemonstration.Classes
         public DateTime TimeStamp { get; set; }
         public string PrevHash { get; set; }
         public string Hash { get; set; }
-        public string Data { get; set; }
+        public Employee Data { get; set; }
 
-        public Block(DateTime ts, string ph, string d)
+        public Block(DateTime ts, string ph, Employee d, int index)
         {
-            Index = 0;
+            Index = index;
             TimeStamp = ts;
             PrevHash = ph;
             Data = d;
@@ -26,16 +26,16 @@ namespace BlockchainDemonstration.Classes
 
         public override string ToString()
         {
-            return (TimeStamp + " " + PrevHash + " " + Hash + " " + Data.ToString());
+            return (Index + " " + TimeStamp + " " + PrevHash + " " + Hash + " " + Data.ToString());
         }
         public string MakeHash()
         {
             SHA256 s = SHA256.Create();
-
+            
             byte[] input = Encoding.UTF8.GetBytes($"{TimeStamp}-{PrevHash ?? ""}-{Data}");
             byte[] output = s.ComputeHash(input);
 
-            return System.Text.Encoding.UTF8.GetString(output);
+            return String.Concat(output);
         }
     }
 }
