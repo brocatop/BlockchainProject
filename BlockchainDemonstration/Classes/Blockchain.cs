@@ -40,22 +40,31 @@ namespace BlockchainDemonstration.Classes
             Chain.Add(block);
         }
 
+        public List<string> CopyChain(Blockchain c)
+        {
+            List<string> copiedChain = new List<string>();
+            foreach (Block b in c.Chain)
+            {
+                copiedChain.Add(b.Data.EmployeeID.ToString());
+                copiedChain.Add(b.Data.EmployeeName);
+                copiedChain.Add(b.Data.Department);
+            }
+            return copiedChain;
+        }
+
+        public bool ValidateChain(string originalChainData, string textBoxData)
+        {
+            if (!textBoxData.Equals(originalChainData))
+            {
+                return false;
+            }
+            return true;
+        }
+
         public Block GetBlockAt(int index)
         {
             return Chain.ElementAt<Block>(index);
         }
 
-        /*
-        public bool HasHashChanged(newHash, oldHash)
-        {
-            if(newHash == oldHash)
-            {
-                return true;
-            }
-            else if(newHash != oldHash)
-            {
-                return false;
-            }
-        } */
     }
 }

@@ -19,12 +19,10 @@ namespace BlockchainDemonstration.Classes
             Employee emp = new Employee();
             employees = emp.CreateListofEmployees();
             Random rnd = new Random();
-            int i = 1;
-            foreach (Employee e in employees)
+            for(int i = 1; i< employees.Count; i++)
             {
                 int index = rnd.Next(employees.Count);
-                newChain.AddBlock(new Block(DateTime.Now, "prevhash", employees[index], i));
-                i++;
+                newChain.AddBlock(new Block(DateTime.Now, newChain.GetBlockAt(i-1).Hash, employees[i], i));
             }
             return newChain;
         }

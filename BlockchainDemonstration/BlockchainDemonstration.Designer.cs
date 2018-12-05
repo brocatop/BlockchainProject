@@ -123,9 +123,9 @@
             this.Block1NewHashLabel.AutoSize = true;
             this.Block1NewHashLabel.Location = new System.Drawing.Point(7, 168);
             this.Block1NewHashLabel.Name = "Block1NewHashLabel";
-            this.Block1NewHashLabel.Size = new System.Drawing.Size(86, 20);
+            this.Block1NewHashLabel.Size = new System.Drawing.Size(51, 20);
             this.Block1NewHashLabel.TabIndex = 10;
-            this.Block1NewHashLabel.Text = "New Hash:";
+            this.Block1NewHashLabel.Text = "Hash:";
             // 
             // Block1PrevHashLabel
             // 
@@ -240,9 +240,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 10;
-            this.label2.Text = "New Hash:";
+            this.label2.Text = "Hash:";
             // 
             // label3
             // 
@@ -284,6 +284,7 @@
             // 
             this.Block2TimeStamp.Location = new System.Drawing.Point(117, 197);
             this.Block2TimeStamp.Name = "Block2TimeStamp";
+            this.Block2TimeStamp.ReadOnly = true;
             this.Block2TimeStamp.Size = new System.Drawing.Size(167, 26);
             this.Block2TimeStamp.TabIndex = 5;
             // 
@@ -357,9 +358,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(7, 168);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 20);
+            this.label8.Size = new System.Drawing.Size(51, 20);
             this.label8.TabIndex = 10;
-            this.label8.Text = "New Hash:";
+            this.label8.Text = "Hash:";
             // 
             // label9
             // 
@@ -401,6 +402,7 @@
             // 
             this.Block3TimeStamp.Location = new System.Drawing.Point(117, 197);
             this.Block3TimeStamp.Name = "Block3TimeStamp";
+            this.Block3TimeStamp.ReadOnly = true;
             this.Block3TimeStamp.Size = new System.Drawing.Size(167, 26);
             this.Block3TimeStamp.TabIndex = 5;
             // 
@@ -474,9 +476,9 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(7, 168);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(86, 20);
+            this.label14.Size = new System.Drawing.Size(51, 20);
             this.label14.TabIndex = 10;
-            this.label14.Text = "New Hash:";
+            this.label14.Text = "Hash:";
             // 
             // label15
             // 
@@ -518,6 +520,7 @@
             // 
             this.NewBlockTimeStamp.Location = new System.Drawing.Point(117, 197);
             this.NewBlockTimeStamp.Name = "NewBlockTimeStamp";
+            this.NewBlockTimeStamp.ReadOnly = true;
             this.NewBlockTimeStamp.Size = new System.Drawing.Size(167, 26);
             this.NewBlockTimeStamp.TabIndex = 5;
             // 
@@ -525,6 +528,7 @@
             // 
             this.NewBlockHash.Location = new System.Drawing.Point(117, 165);
             this.NewBlockHash.Name = "NewBlockHash";
+            this.NewBlockHash.ReadOnly = true;
             this.NewBlockHash.Size = new System.Drawing.Size(167, 26);
             this.NewBlockHash.TabIndex = 4;
             // 
