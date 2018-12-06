@@ -520,7 +520,6 @@
             // 
             this.NewBlockTimeStamp.Location = new System.Drawing.Point(117, 197);
             this.NewBlockTimeStamp.Name = "NewBlockTimeStamp";
-            this.NewBlockTimeStamp.ReadOnly = true;
             this.NewBlockTimeStamp.Size = new System.Drawing.Size(167, 26);
             this.NewBlockTimeStamp.TabIndex = 5;
             // 
@@ -528,7 +527,6 @@
             // 
             this.NewBlockHash.Location = new System.Drawing.Point(117, 165);
             this.NewBlockHash.Name = "NewBlockHash";
-            this.NewBlockHash.ReadOnly = true;
             this.NewBlockHash.Size = new System.Drawing.Size(167, 26);
             this.NewBlockHash.TabIndex = 4;
             // 

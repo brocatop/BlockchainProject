@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace BlockchainDemonstration
         private static Helper help = new Helper();
         Blockchain chain = help.GenerateChain();
         Blockchain chainCopy = new Blockchain();
+        SHA256 s = SHA256.Create();
 
         public BlockchainWindow()
         {
@@ -65,6 +67,15 @@ namespace BlockchainDemonstration
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            Employee emp = new Employee(int.Parse(NewBlockID.Text), NewBlockName.Text, NewBlockDepartment.Text);
+            Block b = new Block(DateTime.Now, Block3PrevHash.Text, emp, 33);
+            if(!string.IsNullOrEmpty(NewBlockID.Text) && !string.IsNullOrEmpty(NewBlockName.Text) && !string.IsNullOrEmpty(NewBlockDepartment.Text))
+            {
+                NewBlockPrevHash.Text = Block3Hash.Text;
+                NewBlockHash.Text = String.Concat(b.MakeHash());
+                NewBlockTimeStamp.Text = DateTime.Now.ToShortDateString();
+            }
+
             CheckForChanges(chain);
         }
 
@@ -73,7 +84,7 @@ namespace BlockchainDemonstration
             bool firstBlockchain = true;
             bool secBlockchain = true;
             bool thirdBlockchain = true;
-          //  Blockchain b = new Blockchain();
+            
             Employee TEmp1 = new Employee(int.Parse(Block1ID.Text), Block1Name.Text, Block1Department.Text);
             Employee TEmp2 = new Employee(int.Parse(Block2ID.Text), Block2Name.Text, Block2Department.Text);
             Employee TEmp3 = new Employee(int.Parse(Block3ID.Text), Block3Name.Text, Block3Department.Text);
@@ -114,25 +125,35 @@ namespace BlockchainDemonstration
             if (firstBlockchain == false)
             {
                 Block1Hash.ForeColor = Color.Red;
+                Block2PrevHash.ForeColor = Color.Red;
+                Block1Hash.Text = newblock1.Hash;
+                Block2PrevHash.Text = newblock1.Hash;
             }
             if (secBlockchain == false)
             {
                 Block2Hash.ForeColor = Color.Red;
-                Block2PrevHash.ForeColor = Color.Red;
+                Block3PrevHash.ForeColor = Color.Red;
+                Block2Hash.Text = newblock2.Hash;
+                Block3PrevHash.Text = newblock2.Hash;
             }
             if (thirdBlockchain == false)
             {
                 Block3Hash.ForeColor = Color.Red;
-                Block3PrevHash.ForeColor = Color.Red;
-            }
-
-           
+                Block3Hash.Text = newblock3.Hash;
+            }          
         }
 
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
             PopulateBlockchainFields();
+
+            NewBlockID.Text = string.Empty;
+            NewBlockName.Text = string.Empty;
+            NewBlockPrevHash.Text = string.Empty;
+            NewBlockDepartment.Text = string.Empty;
+            NewBlockHash.Text = string.Empty;
+            NewBlockTimeStamp.Text = string.Empty;
 
             Block1ID.ForeColor = Color.Black;
             Block2ID.ForeColor = Color.Black;
