@@ -67,13 +67,13 @@ namespace BlockchainDemonstration
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            Employee emp = new Employee(int.Parse(NewBlockID.Text), NewBlockName.Text, NewBlockDepartment.Text);
-            Block b = new Block(DateTime.Now, Block3PrevHash.Text, emp, 33);
             if(!string.IsNullOrEmpty(NewBlockID.Text) && !string.IsNullOrEmpty(NewBlockName.Text) && !string.IsNullOrEmpty(NewBlockDepartment.Text))
             {
+                Employee emp = new Employee(int.Parse(NewBlockID.Text), NewBlockName.Text, NewBlockDepartment.Text);
+                Block b = new Block(DateTime.Now, Block3PrevHash.Text, emp, 33);
                 NewBlockPrevHash.Text = Block3Hash.Text;
                 NewBlockHash.Text = String.Concat(b.MakeHash());
-                NewBlockTimeStamp.Text = DateTime.Now.ToShortDateString();
+                NewBlockTimeStamp.Text = DateTime.Now.ToString();
             }
 
             CheckForChanges(chain);
@@ -84,6 +84,7 @@ namespace BlockchainDemonstration
             bool firstBlockchain = true;
             bool secBlockchain = true;
             bool thirdBlockchain = true;
+            bool fourthBlockchain = true;
             
             Employee TEmp1 = new Employee(int.Parse(Block1ID.Text), Block1Name.Text, Block1Department.Text);
             Employee TEmp2 = new Employee(int.Parse(Block2ID.Text), Block2Name.Text, Block2Department.Text);
@@ -94,53 +95,114 @@ namespace BlockchainDemonstration
             Block newblock3 = new Block(DateTime.Parse(Block3TimeStamp.Text), Block3PrevHash.Text, TEmp3, 3);
 
             List<Block> testChain = new List<Block> { newblock1, newblock2, newblock3 };
-           // List<String> chainStrings = b.CopyChain(chain);
-           // String[] textboxes = new String[] { Block1ID.Text, Block1Name.Text, Block1Department.Text, Block2ID.Text, Block2Name.Text, Block2Department.Text, Block3ID.Text, Block3Name.Text, Block3Department.Text };
             int i = 1;
 
-            foreach (Block block in testChain)
+            if (!string.IsNullOrEmpty(NewBlockID.Text) && !string.IsNullOrEmpty(NewBlockName.Text) && !string.IsNullOrEmpty(NewBlockDepartment.Text))
             {
-                if (CheckChain.GetBlockAt(i+1).Data.EmployeeID != block.Data.EmployeeID || CheckChain.GetBlockAt(i+1).Data.EmployeeName != block.Data.EmployeeName || CheckChain.GetBlockAt(i+1).Data.Department != block.Data.Department)
+                Employee TEmp4 = new Employee(int.Parse(NewBlockID.Text), NewBlockName.Text, NewBlockDepartment.Text);
+                Block newblock4 = new Block(DateTime.Parse(NewBlockTimeStamp.Text), NewBlockPrevHash.Text, TEmp3, int.Parse(NewBlockID.Text));
+                foreach (Block block in testChain)
                 {
-                    if (i == 1)
+                    if (CheckChain.GetBlockAt(i + 1).Data.EmployeeID != block.Data.EmployeeID || CheckChain.GetBlockAt(i + 1).Data.EmployeeName != block.Data.EmployeeName || CheckChain.GetBlockAt(i + 1).Data.Department != block.Data.Department)
                     {
-                        firstBlockchain = false;
-                        secBlockchain = false;
-                        thirdBlockchain = false;
+                        if (i == 1)
+                        {
+                            firstBlockchain = false;
+                            secBlockchain = false;
+                            thirdBlockchain = false;
+                            fourthBlockchain = false;
+                        }
+                        else if (i == 2)
+                        {
+                            secBlockchain = false;
+                            thirdBlockchain = false;
+                            fourthBlockchain = false;
+                        }
+                        else if (i == 3)
+                        {
+                            thirdBlockchain = false;
+                            fourthBlockchain = false;
+                        }
+                        else if (i == 4)
+                        {
+                            fourthBlockchain = false;
+                        }
                     }
-                    else if (i == 2)
-                    {
-                        secBlockchain = false;
-                        thirdBlockchain = false;
-                    }
-                    else if (i == 3)
-                    {
-                        thirdBlockchain = false;
-                    }
+                    i++;
                 }
-                i++;
 
+                if (firstBlockchain == false)
+                {
+                    Block1Hash.ForeColor = Color.Red;
+                    Block2PrevHash.ForeColor = Color.Red;
+                    Block1Hash.Text = newblock1.Hash;
+                    Block2PrevHash.Text = newblock1.Hash;
+                }
+                if (secBlockchain == false)
+                {
+                    Block2Hash.ForeColor = Color.Red;
+                    Block3PrevHash.ForeColor = Color.Red;
+                    Block2Hash.Text = newblock2.Hash;
+                    Block3PrevHash.Text = newblock2.Hash;
+                }
+                if (thirdBlockchain == false)
+                {
+                    Block3Hash.ForeColor = Color.Red;
+                    NewBlockPrevHash.ForeColor = Color.Red;
+                    Block3Hash.Text = newblock3.Hash;
+                    NewBlockPrevHash.Text = newblock3.Hash;
+                }
+                if (fourthBlockchain == false)
+                {
+                    NewBlockHash.ForeColor = Color.Red;
+                    NewBlockHash.Text = newblock4.Hash;
+                }
             }
+            else
+            {
+                foreach (Block block in testChain)
+                {
+                    if (CheckChain.GetBlockAt(i + 1).Data.EmployeeID != block.Data.EmployeeID || CheckChain.GetBlockAt(i + 1).Data.EmployeeName != block.Data.EmployeeName || CheckChain.GetBlockAt(i + 1).Data.Department != block.Data.Department)
+                    {
+                        if (i == 1)
+                        {
+                            firstBlockchain = false;
+                            secBlockchain = false;
+                            thirdBlockchain = false;
+                        }
+                        else if (i == 2)
+                        {
+                            secBlockchain = false;
+                            thirdBlockchain = false;
+                        }
+                        else if (i == 3)
+                        {
+                            thirdBlockchain = false;
+                        }
+                    }
+                    i++;
+                }
 
-            if (firstBlockchain == false)
-            {
-                Block1Hash.ForeColor = Color.Red;
-                Block2PrevHash.ForeColor = Color.Red;
-                Block1Hash.Text = newblock1.Hash;
-                Block2PrevHash.Text = newblock1.Hash;
-            }
-            if (secBlockchain == false)
-            {
-                Block2Hash.ForeColor = Color.Red;
-                Block3PrevHash.ForeColor = Color.Red;
-                Block2Hash.Text = newblock2.Hash;
-                Block3PrevHash.Text = newblock2.Hash;
-            }
-            if (thirdBlockchain == false)
-            {
-                Block3Hash.ForeColor = Color.Red;
-                Block3Hash.Text = newblock3.Hash;
-            }          
+                if (firstBlockchain == false)
+                {
+                    Block1Hash.ForeColor = Color.Red;
+                    Block2PrevHash.ForeColor = Color.Red;
+                    Block1Hash.Text = newblock1.Hash;
+                    Block2PrevHash.Text = newblock1.Hash;
+                }
+                if (secBlockchain == false)
+                {
+                    Block2Hash.ForeColor = Color.Red;
+                    Block3PrevHash.ForeColor = Color.Red;
+                    Block2Hash.Text = newblock2.Hash;
+                    Block3PrevHash.Text = newblock2.Hash;
+                }
+                if (thirdBlockchain == false)
+                {
+                    Block3Hash.ForeColor = Color.Red;
+                    Block3Hash.Text = newblock3.Hash;
+                }
+            }             
         }
 
 

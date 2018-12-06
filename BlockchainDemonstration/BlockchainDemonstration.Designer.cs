@@ -107,7 +107,7 @@
             this.groupBox1.Size = new System.Drawing.Size(290, 327);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Block 1";
+            this.groupBox1.Text = "Block";
             // 
             // Block1TimestampLabel
             // 
@@ -224,7 +224,7 @@
             this.groupBox2.Size = new System.Drawing.Size(290, 327);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Block 2";
+            this.groupBox2.Text = "Block";
             // 
             // label1
             // 
@@ -342,7 +342,7 @@
             this.groupBox3.Size = new System.Drawing.Size(290, 327);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Block 3";
+            this.groupBox3.Text = "Block";
             // 
             // label7
             // 

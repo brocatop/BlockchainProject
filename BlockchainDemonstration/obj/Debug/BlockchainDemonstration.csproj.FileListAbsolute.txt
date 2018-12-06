@@ -1,10 +1,9 @@
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\bin\Debug\BlockchainDemonstration.exe.config
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\bin\Debug\BlockchainDemonstration.exe
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\bin\Debug\BlockchainDemonstration.pdb
+C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\obj\Debug\BlockchainDemonstration.BlockchainWindow.resources
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\obj\Debug\BlockchainDemonstration.Properties.Resources.resources
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\obj\Debug\BlockchainDemonstration.csproj.GenerateResource.cache
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\obj\Debug\BlockchainDemonstration.csproj.CoreCompileInputs.cache
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\obj\Debug\BlockchainDemonstration.exe
 C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\obj\Debug\BlockchainDemonstration.pdb
-C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\obj\Debug\BlockchainDemonstration.csprojAssemblyReference.cache
-C:\Users\Patrick\Documents\Visual Studio 2017\Projects\BlockchainProject\BlockchainDemonstration\obj\Debug\BlockchainDemonstration.BlockchainWindow.resources

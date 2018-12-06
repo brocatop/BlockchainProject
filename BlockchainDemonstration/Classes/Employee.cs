@@ -30,8 +30,8 @@ namespace BlockchainDemonstration.Classes
         {
             Employee Al = new Employee(1, "Al", "Accounting");
             Employee Allen = new Employee(2, "Allen", "HR");
-            Employee TaylaAnn = new Employee(3, "Tayla-Ann", "Customer Service");
-            Employee Seth = new Employee(4, "Seth Rogen", "Customer Service");
+            Employee TaylaAnn = new Employee(3, "Wex Richmond", "Executive");
+            Employee Seth = new Employee(4, "Thomas Terrier", "Customer Service");
             Employee George = new Employee(5, "George of the Jungle", "Physical Plant");
             Employee Sally = new Employee(6, "Sally", "Management");
             List<Employee> employees = new List<Employee> { Al, Allen, TaylaAnn, Seth, George, Sally};
